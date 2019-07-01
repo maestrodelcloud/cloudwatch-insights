@@ -26,6 +26,8 @@ fields @timestamp , @message
 | limit 20
 ```
 
+![Resultados consulta # 2](https://github.com/maestrodelcloud/cloudwatch-insights/blob/master/imagenes/consulta2.png)
+
 ## Consulta # 3 - Filtrado con Estadística
 
 * **Estadística:** Contar la cantidad (numRejections) de rechazos por IP Origen (srcAddr).
@@ -39,6 +41,7 @@ filter action="REJECT"
 | sort numRejections desc
 | limit 20
 ```
+![Resultados consulta # 3](https://github.com/maestrodelcloud/cloudwatch-insights/blob/master/imagenes/consulta3.png)
 
 
 ## Consulta # 4 - Estadística
@@ -51,6 +54,7 @@ stats sum(bytes) as bytesTransferred by srcAddr, dstAddr
 | sort bytesTransferred desc
 | limit 10
 ```
+![Resultados consulta # 4](https://github.com/maestrodelcloud/cloudwatch-insights/blob/master/imagenes/consulta4.png)
 
 
 ## Consulta # 5 - Tabla para Dashboard # 1
@@ -59,6 +63,7 @@ stats sum(bytes) as bytesTransferred by srcAddr, dstAddr
 ```
 stats avg(bytes), min(bytes), max(bytes) by srcAddr, dstAddr
 ```
+![Resultados consulta # 5](https://github.com/maestrodelcloud/cloudwatch-insights/blob/master/imagenes/consulta5.png)
 
 
 ## Consulta # 6 - Tabla para Dashboard # 2
@@ -67,4 +72,5 @@ stats avg(bytes), min(bytes), max(bytes) by srcAddr, dstAddr
 ```
 stats avg(bytes), min(bytes), max(bytes), max(packets) by srcAddr, dstAddr, srcPort, dstPort
 ```
+![Resultados consulta # 6](https://github.com/maestrodelcloud/cloudwatch-insights/blob/master/imagenes/consulta6.png)
 
